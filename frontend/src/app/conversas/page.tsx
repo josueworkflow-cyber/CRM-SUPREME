@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ArenaSupremeLogo from "../../../../assets/logo horizontal sem fundo.png";
 import { AppSidebar } from "../../components/app-sidebar";
 import { Icon } from "../../components/icon";
@@ -17,6 +17,44 @@ function currentTime() {
   return new Intl.DateTimeFormat("pt-BR", { hour: "2-digit", minute: "2-digit" }).format(new Date());
 }
 
+function normalizeName(name: string) {
+  return name.trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase("pt-BR");
+}
+
+function createFunnelConversation(params: URLSearchParams): Conversation | null {
+  const name = params.get("cliente")?.trim();
+  if (!name) return null;
+
+  const plan = params.get("plano")?.trim() || "Interesse em conhecer os planos";
+  const value = params.get("valor")?.trim() || "A definir";
+  const owner = params.get("responsavel")?.trim() || "João Silva";
+  const funnelNote = params.get("nota")?.trim() || "Oportunidade encaminhada do funil";
+  const opportunityId = params.get("oportunidade")?.trim() || name;
+  const safeId = opportunityId.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9-]+/g, "-");
+  const id = `funil-${safeId || "cliente"}`;
+  const initials = name.split(/\s+/).slice(0, 2).map((part) => part[0]).join("").toUpperCase();
+  const time = currentTime();
+
+  return {
+    id,
+    name,
+    initials,
+    tone: "tone-3",
+    phone: "Contato via funil",
+    preview: `Tenho interesse em ${plan.toLocaleLowerCase("pt-BR")}.`,
+    time,
+    unread: 0,
+    status: "Aguardando equipe",
+    owner,
+    interest: plan,
+    value,
+    summary: `Oportunidade encaminhada do funil. ${funnelNote}.`,
+    internalNote: `Cliente encaminhado do funil. ${funnelNote}.`,
+    withAi: false,
+    messages: [{ id: `${id}-mensagem-1`, sender: "client", text: `Olá! Tenho interesse em ${plan.toLocaleLowerCase("pt-BR")}.`, time }],
+  };
+}
+
 export default function ConversationsPage() {
   const [conversations, setConversations] = useState(initialConversations);
   const [activeId, setActiveId] = useState("mariana");
@@ -28,6 +66,29 @@ export default function ConversationsPage() {
   const [noteDraft, setNoteDraft] = useState(initialConversations[0].internalNote);
   const [mobileView, setMobileView] = useState<"list" | "chat">("list");
   const [notice, setNotice] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const clientName = params.get("cliente")?.trim();
+    if (!clientName) return;
+
+    const existingConversation = initialConversations.find((conversation) => normalizeName(conversation.name) === normalizeName(clientName));
+    if (existingConversation) {
+      setActiveId(existingConversation.id);
+      setNoteDraft(existingConversation.internalNote);
+      setConversations((current) => current.map((conversation) => conversation.id === existingConversation.id ? { ...conversation, unread: 0 } : conversation));
+    } else {
+      const funnelConversation = createFunnelConversation(params);
+      if (!funnelConversation) return;
+      setActiveId(funnelConversation.id);
+      setNoteDraft(funnelConversation.internalNote);
+      setConversations((current) => current.some((conversation) => conversation.id === funnelConversation.id)
+        ? current
+        : [funnelConversation, ...current]);
+    }
+
+    setMobileView("chat");
+  }, []);
 
   const activeConversation = conversations.find((conversation) => conversation.id === activeId) ?? conversations[0];
   const unreadCount = conversations.reduce((total, conversation) => total + conversation.unread, 0);
