@@ -1,0 +1,153 @@
+.scope { min-height: 100vh; }
+/*  Visão geral page styles  */
+.scope :global(.heading-actions) { display: flex; align-items: center; gap: 9px; padding-bottom: 1px; }
+.scope :global(.date-button) { min-width: 125px; justify-content: space-between; font-size: 10px; }
+
+.scope :global(.metrics-grid) { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-bottom: 12px; }
+.scope :global(.metric-card) { min-width: 0; height: 67px; padding: 9px 10px 7px; border: 1px solid #292929; border-radius: 6px; background: var(--card); box-shadow: 0 3px 10px rgba(0, 0, 0, .08); }
+.scope :global(.metric-label) { display: flex; align-items: center; gap: 7px; color: #d0d0d0; white-space: nowrap; font-size: 10px; }
+.scope :global(.metric-icon) { display: grid; place-items: center; width: 17px; height: 17px; flex: 0 0 auto; color: var(--orange); }
+.scope :global(.metric-icon svg) { width: 16px; height: 16px; }
+.scope :global(.metric-card > strong) { display: block; margin: 4px 0 0 24px; font-size: 20px; line-height: 1; font-weight: 700; letter-spacing: -.035em; }
+
+.scope :global(.dashboard-grid) { display: grid; grid-template-columns: minmax(0, 1.72fr) minmax(260px, .98fr); gap: 10px; align-items: stretch; }
+.scope :global(.panel) { min-width: 0; border: 1px solid #292929; border-radius: 7px; background: var(--card); box-shadow: 0 4px 14px rgba(0, 0, 0, .08); }
+.scope :global(.recent-panel), .scope :global(.attention-panel) { padding: 10px 10px 8px; }
+.scope :global(.panel-heading) { min-height: 19px; display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 7px; }
+.scope :global(.panel-heading h2) { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: -.015em; }
+.scope :global(.text-link) { display: inline-flex; align-items: center; gap: 4px; padding: 0; border: 0; background: none; color: var(--orange); font-size: 10px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.scope :global(.text-link:hover) { color: #ff8a3d; }
+.scope :global(.panel-meta) { color: #888; font-size: 9px; white-space: nowrap; }
+.scope :global(.table-scroll) { overflow-x: auto; }
+.scope :global(.customers-table) { width: 100%; border-collapse: separate; border-spacing: 0; text-align: left; }
+.scope :global(.customers-table th) { height: 25px; padding: 0 7px; background: #222; color: #c8c8c8; font-size: 9px; font-weight: 500; white-space: nowrap; }
+.scope :global(.customers-table th:first-child) { border-radius: 5px 0 0 5px; }
+.scope :global(.customers-table th:last-child) { border-radius: 0 5px 5px 0; }
+.scope :global(.customers-table td) { height: 39px; padding: 4px 7px; border-bottom: 1px solid #2a2a2a; vertical-align: middle; }
+.scope :global(.customers-table tr:last-child td) { border-bottom: 0; }
+.scope :global(.customers-table tbody tr:hover) { background: #202020; }
+.scope :global(.customer-cell), .scope :global(.interaction-cell), .scope :global(.owner-cell) { min-width: 0; display: flex; align-items: center; gap: 7px; }
+.scope :global(.customer-cell > div), .scope :global(.interaction-cell > div) { min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.scope :global(.customer-cell strong), .scope :global(.owner-cell span) { overflow: hidden; color: #eee; font-size: 9px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.customer-cell > div > span) { color: #adadad; font-size: 8px; white-space: nowrap; }
+.scope :global(.interaction-cell) { gap: 6px; }
+.scope :global(.interaction-cell > svg) { flex: 0 0 auto; color: var(--orange); }
+.scope :global(.interaction-cell > div > span) { color: #e5e5e5; font-size: 9px; white-space: nowrap; }
+.scope :global(.interaction-cell small) { max-width: 150px; overflow: hidden; color: #999; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.owner-cell) { gap: 5px; }
+.scope :global(.owner-cell span) { font-size: 8px; font-weight: 500; }
+.scope :global(.avatar-small) { width: 21px; height: 21px; font-size: 7px; }
+.scope :global(.stage-badge) { display: inline-flex; align-items: center; justify-content: center; min-height: 19px; padding: 0 8px; border: 1px solid transparent; border-radius: 20px; font-size: 8px; font-weight: 600; white-space: nowrap; }
+.scope :global(.stage-new), .scope :global(.stage-progress) { color: #ff8a37; background: rgba(255, 101, 0, .15); }
+.scope :global(.stage-negotiation) { color: #ffae28; background: rgba(255, 168, 0, .14); }
+.scope :global(.stage-won) { color: #86d9a5; background: rgba(83, 177, 112, .15); }
+
+.scope :global(.attention-list) { display: grid; gap: 6px; }
+.scope :global(.attention-card) { min-width: 0; min-height: 54px; display: flex; align-items: center; gap: 8px; padding: 6px 7px; border: 1px solid #303030; border-radius: 6px; background: #1d1d1d; }
+.scope :global(.attention-card > .avatar) { width: 29px; height: 29px; }
+.scope :global(.attention-copy) { min-width: 0; display: flex; flex: 1; flex-direction: column; gap: 3px; }
+.scope :global(.attention-copy strong) { overflow: hidden; color: #eee; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.attention-copy > span) { overflow: hidden; color: #ff9a31; font-size: 8px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.attention-copy small) { color: #9c9c9c; font-size: 8px; white-space: nowrap; }
+.scope :global(.button-compact) { height: 24px; flex: 0 0 auto; padding: 0 7px; border: 1px solid #414141; border-radius: 5px; background: #1a1a1a; color: #eee; font-size: 8px; cursor: pointer; }
+.scope :global(.button-compact:hover) { border-color: var(--orange); color: #ff9a31; }
+
+.scope :global(.pipeline-panel) { margin-top: 10px; padding: 10px; }
+.scope :global(.pipeline-panel .panel-heading) { margin-bottom: 8px; }
+.scope :global(.pipeline-grid) { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.scope :global(.pipeline-stage) { height: 49px; display: flex; flex-direction: column; justify-content: center; gap: 3px; padding: 5px 10px; border: 1px solid #2b2b2b; border-radius: 6px; background: #191919; }
+.scope :global(.pipeline-stage > div) { display: flex; align-items: center; gap: 7px; overflow: hidden; color: #c8c8c8; font-size: 9px; white-space: nowrap; }
+.scope :global(.pipeline-stage > strong) { margin-left: 16px; font-size: 15px; line-height: 1; }
+.scope :global(.stage-dot) { width: 9px; height: 9px; flex: 0 0 auto; border-radius: 50%; }
+.scope :global(.dot-new), .scope :global(.dot-progress) { background: var(--orange); }
+.scope :global(.dot-negotiation) { background: #ffad18; }
+.scope :global(.dot-won) { background: #ff6500; }
+.scope :global(.dot-lost) { background: #666; }
+.scope :global(.page-footer) { display: flex; justify-content: space-between; padding: 13px 2px 0; color: #686868; font-size: 9px; }
+.scope :global(.conversation-modal) { width: min(100%, 450px); }
+.scope :global(.conversation-person) { display: flex; align-items: center; gap: 10px; }
+.scope :global(.conversation-person .avatar) { width: 38px; height: 38px; font-size: 10px; }
+.scope :global(.conversation-person h2) { margin: 0 0 3px; font-size: 16px; }
+.scope :global(.conversation-person span:not(.avatar)) { color: var(--muted); font-size: 10px; }
+.scope :global(.conversation-status) { display: flex; align-items: center; gap: 10px; margin-top: 18px; color: #aaa; font-size: 10px; }
+.scope :global(.message-preview) { margin-top: 15px; padding: 13px; border: 1px solid #343434; border-radius: 7px; background: #151515; }
+.scope :global(.message-time) { color: #8e8e8e; font-size: 9px; }
+.scope :global(.message-preview p) { margin: 8px 0 0; color: #eee; font-size: 12px; line-height: 1.5; }
+.scope :global(.conversation-note) { display: flex; align-items: flex-start; gap: 8px; margin: 13px 0 17px; color: #a0a0a0; font-size: 10px; line-height: 1.5; }
+.scope :global(.conversation-note svg) { flex: 0 0 auto; color: var(--orange); }
+@media (max-width: 1200px) {
+  .scope :global(.dashboard-grid) { grid-template-columns: minmax(0, 1.65fr) minmax(245px, .95fr); }
+  .scope :global(.metric-card) { padding-right: 7px; padding-left: 8px; }
+  .scope :global(.metric-label) { gap: 5px; font-size: 9px; }
+  .scope :global(.metric-card > strong) { margin-left: 22px; } }
+@media (max-width: 980px) {
+  .scope :global(.heading-actions) { gap: 6px; }
+  .scope :global(.date-button) { min-width: 116px; }
+  .scope :global(.metrics-grid) { gap: 6px; margin-bottom: 9px; }
+  .scope :global(.metric-card) { height: 64px; padding: 8px 6px 6px; }
+  .scope :global(.metric-label) { gap: 4px; font-size: 8px; }
+  .scope :global(.metric-icon), .scope :global(.metric-icon svg) { width: 14px; height: 14px; }
+  .scope :global(.metric-card > strong) { margin-top: 5px; margin-left: 18px; font-size: 18px; }
+  .scope :global(.dashboard-grid) { grid-template-columns: minmax(0, 1.75fr) minmax(232px, .95fr); gap: 7px; }
+  .scope :global(.recent-panel), .scope :global(.attention-panel) { padding: 8px 7px 6px; }
+  .scope :global(.panel-heading h2) { font-size: 11px; }
+  .scope :global(.panel-meta) { font-size: 8px; }
+  .scope :global(.customers-table th) { padding: 0 5px; font-size: 8px; }
+  .scope :global(.customers-table td) { padding: 4px 5px; }
+  .scope :global(.avatar-small) { width: 19px; height: 19px; }
+  .scope :global(.customer-cell), .scope :global(.interaction-cell) { gap: 5px; }
+  .scope :global(.customer-cell strong), .scope :global(.interaction-cell > div > span) { font-size: 8px; }
+  .scope :global(.customer-cell > div > span), .scope :global(.interaction-cell small), .scope :global(.owner-cell span) { font-size: 7px; }
+  .scope :global(.stage-badge) { min-height: 17px; padding: 0 6px; font-size: 7px; }
+  .scope :global(.attention-card) { min-height: 52px; gap: 6px; padding: 5px; }
+  .scope :global(.attention-card > .avatar) { width: 25px; height: 25px; }
+  .scope :global(.attention-copy strong) { font-size: 8px; }
+  .scope :global(.attention-copy > span), .scope :global(.attention-copy small) { font-size: 7px; }
+  .scope :global(.button-compact) { height: 22px; padding: 0 5px; font-size: 7px; }
+  .scope :global(.pipeline-panel) { margin-top: 7px; padding: 8px; }
+  .scope :global(.pipeline-grid) { gap: 6px; }
+  .scope :global(.pipeline-stage) { height: 45px; padding: 4px 7px; }
+  .scope :global(.pipeline-stage > div) { gap: 5px; font-size: 8px; }
+  .scope :global(.pipeline-stage > strong) { font-size: 14px; } }
+@media (max-width: 780px) {
+  .scope :global(.heading-actions) { flex-direction: column-reverse; align-items: stretch; }
+  .scope :global(.heading-actions button) { width: 100%; }
+  .scope :global(.metrics-grid) { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .scope :global(.metric-card) { height: 68px; padding: 9px 10px 7px; }
+  .scope :global(.metric-label) { gap: 6px; font-size: 10px; }
+  .scope :global(.metric-icon), .scope :global(.metric-icon svg) { width: 16px; height: 16px; }
+  .scope :global(.metric-card > strong) { margin-left: 22px; font-size: 19px; }
+  .scope :global(.dashboard-grid) { grid-template-columns: 1fr; gap: 9px; }
+  .scope :global(.recent-panel), .scope :global(.attention-panel) { padding: 11px; }
+  .scope :global(.panel-heading h2) { font-size: 13px; }
+  .scope :global(.panel-meta) { font-size: 9px; }
+  .scope :global(.customers-table) { min-width: 620px; }
+  .scope :global(.customers-table th) { padding: 0 8px; font-size: 9px; }
+  .scope :global(.customers-table td) { height: 43px; padding: 5px 8px; }
+  .scope :global(.customer-cell strong), .scope :global(.interaction-cell > div > span) { font-size: 9px; }
+  .scope :global(.customer-cell > div > span), .scope :global(.interaction-cell small), .scope :global(.owner-cell span) { font-size: 8px; }
+  .scope :global(.avatar-small) { width: 21px; height: 21px; }
+  .scope :global(.stage-badge) { min-height: 19px; padding: 0 8px; font-size: 8px; }
+  .scope :global(.attention-card) { min-height: 62px; gap: 9px; padding: 8px; }
+  .scope :global(.attention-card > .avatar) { width: 31px; height: 31px; }
+  .scope :global(.attention-copy strong) { font-size: 10px; }
+  .scope :global(.attention-copy > span), .scope :global(.attention-copy small) { font-size: 9px; }
+  .scope :global(.button-compact) { height: 27px; padding: 0 9px; font-size: 9px; }
+  .scope :global(.pipeline-panel) { margin-top: 9px; padding: 11px; }
+  .scope :global(.pipeline-grid) { gap: 6px; }
+  .scope :global(.pipeline-stage) { height: 54px; padding: 5px 7px; }
+  .scope :global(.pipeline-stage > div) { font-size: 8px; }
+  .scope :global(.pipeline-stage > strong) { font-size: 15px; } }
+@media (max-width: 500px) {
+  .scope :global(.heading-actions) { width: 100%; flex-direction: row; }
+  .scope :global(.heading-actions button) { width: auto; }
+  .scope :global(.heading-actions .date-button) { flex: 1; }
+  .scope :global(.heading-actions .button-primary) { flex: 1; }
+  .scope :global(.metrics-grid) { gap: 6px; }
+  .scope :global(.metric-card) { height: 64px; padding: 8px 6px 6px; }
+  .scope :global(.metric-label) { gap: 4px; font-size: 8px; }
+  .scope :global(.metric-icon), .scope :global(.metric-icon svg) { width: 14px; height: 14px; }
+  .scope :global(.metric-card > strong) { margin-left: 18px; font-size: 17px; }
+  .scope :global(.pipeline-grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .scope :global(.pipeline-stage:last-child) { grid-column: span 2; }
+  .scope :global(.page-footer) { font-size: 8px; } }

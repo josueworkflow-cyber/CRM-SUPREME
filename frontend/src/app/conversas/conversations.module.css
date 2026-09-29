@@ -1,0 +1,171 @@
+.scope { min-height: 100vh; }
+/*  Conversas page styles  */
+.scope :global(.conversations-main) { width: calc(100% - 220px); height: 100vh; min-height: 0; overflow: hidden; }
+.scope :global(.conversations-page-content) { width: 100%; max-width: 1800px; height: 100%; display: flex; flex-direction: column; gap: 13px; padding: 17px 16px 16px; }
+.scope :global(.conversations-heading) { min-height: 42px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.scope :global(.conversations-heading h1) { font-size: 22px; }
+.scope :global(.conversations-heading .page-subtitle) { margin-top: 3px; font-size: 10px; }
+.scope :global(.inbox-controls) { display: flex; align-items: center; gap: 8px; }
+.scope :global(.inbox-select) { height: 34px; min-width: 138px; display: flex; align-items: center; gap: 7px; padding: 0 8px; border: 1px solid #303030; border-radius: 6px; background: #151515; color: #d1d1d1; }
+.scope :global(.inbox-select > svg:first-child) { flex: 0 0 auto; color: #d8d8d8; }
+.scope :global(.inbox-select > svg:last-child) { flex: 0 0 auto; color: #a3a3a3; }
+.scope :global(.inbox-select select) { min-width: 0; flex: 1; appearance: none; border: 0; outline: 0; background: transparent; color: #e8e8e8; font-size: 10px; cursor: pointer; }
+.scope :global(.inbox-select option) { background: #1b1b1b; color: #fff; }
+.scope :global(.team-select) { min-width: 130px; }
+.scope :global(.conversation-workspace) { min-height: 0; flex: 1; display: grid; grid-template-columns: minmax(215px, 250px) minmax(280px, 1fr) minmax(205px, 230px); gap: 8px; }
+.scope :global(.inbox-panel) { min-width: 0; min-height: 0; border: 1px solid #292929; border-radius: 8px; background: #131313; box-shadow: 0 4px 14px rgba(0,0,0,.1); }
+.scope :global(.conversation-list-panel) { display: flex; flex-direction: column; overflow: visible; }
+.scope :global(.inbox-search-row) { display: flex; align-items: center; gap: 6px; padding: 8px 8px 6px; }
+.scope :global(.inbox-search) { min-width: 0; height: 31px; display: flex; flex: 1; align-items: center; gap: 7px; padding: 0 8px; border: 1px solid #2b2b2b; border-radius: 6px; background: #101010; color: #aaa; }
+.scope :global(.inbox-search:focus-within) { border-color: #555; }
+.scope :global(.inbox-search svg) { flex: 0 0 auto; }
+.scope :global(.inbox-search input) { min-width: 0; width: 100%; height: 100%; border: 0; outline: 0; background: transparent; color: #fff; font-size: 10px; }
+.scope :global(.inbox-search input::placeholder) { color: #aaa; opacity: 1; }
+.scope :global(.filter-menu-wrap) { position: relative; flex: 0 0 auto; }
+.scope :global(.inbox-filter-button) { width: 31px; height: 31px; border-radius: 6px; background: #151515; }
+.scope :global(.inbox-filter-button.active) { color: var(--orange); border-color: rgba(255,101,0,.6); }
+.scope :global(.inbox-filter-menu) { position: absolute; top: 36px; right: 0; z-index: 12; width: 180px; display: grid; gap: 3px; padding: 8px; border: 1px solid #393939; border-radius: 7px; background: #1a1a1a; box-shadow: 0 12px 28px rgba(0,0,0,.45); }
+.scope :global(.inbox-filter-menu strong) { padding: 3px 6px 6px; color: #a3a3a3; font-size: 9px; font-weight: 600; }
+.scope :global(.inbox-filter-menu button) { min-height: 28px; padding: 0 6px; border: 0; border-radius: 4px; background: transparent; color: #d6d6d6; font-size: 10px; text-align: left; cursor: pointer; }
+.scope :global(.inbox-filter-menu button:hover), .scope :global(.inbox-filter-menu button.chosen) { background: #292929; color: #ff8a37; }
+.scope :global(.inbox-tabs) { min-height: 32px; display: flex; align-items: center; gap: 5px; padding: 0 8px 7px; border-bottom: 1px solid #282828; }
+.scope :global(.inbox-tabs button) { min-height: 23px; display: inline-flex; align-items: center; gap: 5px; padding: 0 8px; border: 1px solid #303030; border-radius: 15px; background: #161616; color: #c8c8c8; font-size: 9px; white-space: nowrap; cursor: pointer; }
+.scope :global(.inbox-tabs button.selected) { border-color: var(--orange); background: var(--orange); color: #fff; }
+.scope :global(.inbox-tabs button span) { min-width: 16px; height: 16px; display: inline-grid; place-items: center; border-radius: 10px; background: rgba(0,0,0,.22); font-size: 8px; font-weight: 700; }
+.scope :global(.conversation-list-scroll) { min-height: 0; flex: 1; overflow-y: auto; padding: 5px 6px; scrollbar-color: #414141 #141414; scrollbar-width: thin; }
+.scope :global(.conversation-list-item) { position: relative; width: 100%; min-height: 54px; display: flex; align-items: center; gap: 8px; padding: 6px 6px; border: 1px solid transparent; border-radius: 7px; background: transparent; color: #fff; text-align: left; cursor: pointer; }
+.scope :global(.conversation-list-item + .conversation-list-item) { margin-top: 3px; }
+.scope :global(.conversation-list-item:hover) { background: #1a1a1a; }
+.scope :global(.conversation-list-item.selected) { border-color: var(--orange); background: #1e1b19; box-shadow: inset 2px 0 var(--orange); }
+.scope :global(.conversation-avatar) { width: 34px; height: 34px; font-size: 9px; }
+.scope :global(.conversation-item-copy) { min-width: 0; flex: 1; display: grid; gap: 3px; }
+.scope :global(.conversation-item-top) { min-width: 0; display: flex; align-items: center; justify-content: space-between; gap: 7px; }
+.scope :global(.conversation-item-top strong) { overflow: hidden; color: #eee; font-size: 10px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.conversation-item-top time) { flex: 0 0 auto; color: #aaa; font-size: 8px; }
+.scope :global(.conversation-preview) { overflow: hidden; color: #aaa; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.conversation-item-meta) { min-height: 13px; display: flex; align-items: center; justify-content: space-between; }
+.scope :global(.ai-mini-tag) { display: inline-flex; align-items: center; gap: 3px; color: #ff9a40; font-size: 8px; }
+.scope :global(.ai-mini-tag svg) { color: var(--orange); }
+.scope :global(.unread-count) { min-width: 16px; height: 16px; display: inline-grid; place-items: center; margin-left: auto; border-radius: 50%; background: #ef4141; color: white; font-size: 8px; font-weight: 700; }
+.scope :global(.empty-inbox) { padding: 18px 10px; color: #999; font-size: 10px; text-align: center; }
+.scope :global(.chat-panel) { display: flex; flex-direction: column; overflow: hidden; background: #111; }
+.scope :global(.chat-header) { min-height: 54px; display: flex; align-items: center; gap: 7px; padding: 6px 8px; border-bottom: 1px solid #2b2b2b; background: #151515; }
+.scope :global(.chat-header-avatar) { width: 34px; height: 34px; font-size: 9px; }
+.scope :global(.chat-header-person) { min-width: 0; flex: 1; display: grid; gap: 4px; }
+.scope :global(.chat-header-person > strong) { overflow: hidden; color: #f1f1f1; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.chat-header-person > span) { min-width: 0; display: flex; align-items: center; gap: 4px; overflow: hidden; color: #b5b5b5; font-size: 8px; white-space: nowrap; }
+.scope :global(.chat-header-person > span svg) { flex: 0 0 auto; color: #31c66b; }
+.scope :global(.chat-header-person i), .scope :global(.status-pill i) { width: 6px; height: 6px; flex: 0 0 auto; border-radius: 50%; background: #40cf72; }
+.scope :global(.chat-header-person b) { color: #666; font-weight: 400; }
+.scope :global(.chat-more-button) { width: 24px; flex: 0 0 auto; }
+.scope :global(.take-chat-button) { height: 28px; flex: 0 0 auto; padding: 0 7px; font-size: 8px; }
+.scope :global(.take-chat-button:disabled) { border-color: #343434; background: #1a1a1a; color: #858585; cursor: default; }
+.scope :global(.conversation-back-button) { display: none; }
+.scope :global(.chat-date-divider) { display: flex; align-items: center; justify-content: center; padding: 10px 0 6px; }
+.scope :global(.chat-date-divider span) { padding: 3px 9px; border: 1px solid #292929; border-radius: 12px; background: #191919; color: #aaa; font-size: 8px; }
+.scope :global(.chat-messages) { min-height: 0; flex: 1; display: flex; flex-direction: column; gap: 9px; overflow-y: auto; padding: 5px 10px 12px; scrollbar-color: #414141 #141414; scrollbar-width: thin; }
+.scope :global(.chat-message-row) { width: 100%; display: flex; }
+.scope :global(.chat-message-row.from-client) { justify-content: flex-start; }
+.scope :global(.chat-message-row.from-agent) { justify-content: flex-end; }
+.scope :global(.chat-bubble) { max-width: min(86%, 420px); display: grid; gap: 5px; padding: 8px 9px 6px; border: 1px solid #2b2b2b; border-radius: 8px; background: #252525; color: #f1f1f1; }
+.scope :global(.from-agent .chat-bubble) { border-color: #8d3904; background: linear-gradient(145deg, #783000, #552000); }
+.scope :global(.chat-bubble p) { margin: 0; font-size: 10px; line-height: 1.5; white-space: pre-wrap; overflow-wrap: anywhere; }
+.scope :global(.chat-bubble > span) { display: inline-flex; align-items: center; justify-self: end; gap: 2px; color: #bcbcbc; font-size: 8px; }
+.scope :global(.from-agent .chat-bubble > span) { color: #ffd0a5; }
+.scope :global(.from-agent .chat-bubble > span svg) { color: #ff9a3f; }
+.scope :global(.message-composer) { min-height: 43px; display: flex; align-items: center; gap: 5px; margin: 0 8px 8px; padding: 4px 5px; border: 1px solid #303030; border-radius: 7px; background: #191919; }
+.scope :global(.composer-tool) { width: 25px; height: 28px; display: grid; place-items: center; flex: 0 0 auto; border: 0; border-radius: 5px; background: transparent; color: #a3a3a3; cursor: pointer; }
+.scope :global(.composer-tool:hover) { background: #252525; color: #fff; }
+.scope :global(.message-composer input) { min-width: 0; height: 31px; flex: 1; border: 0; outline: 0; background: transparent; color: #fff; font-size: 10px; }
+.scope :global(.message-composer input::placeholder) { color: #aaa; opacity: 1; }
+.scope :global(.send-message-button) { width: 30px; height: 30px; display: grid; place-items: center; flex: 0 0 auto; border: 0; border-radius: 6px; background: var(--orange); color: #fff; cursor: pointer; transition: background .15s ease; }
+.scope :global(.send-message-button:hover) { background: #e85c00; }
+.scope :global(.client-details-panel) { display: flex; flex-direction: column; gap: 11px; overflow-y: auto; padding: 9px 10px 10px; scrollbar-color: #414141 #141414; scrollbar-width: thin; }
+.scope :global(.details-heading) { display: flex; align-items: center; justify-content: space-between; min-height: 17px; }
+.scope :global(.details-heading h2) { margin: 0; color: #f0f0f0; font-size: 10px; font-weight: 700; }
+.scope :global(.details-more-button) { width: 20px; height: 20px; }
+.scope :global(.client-identity) { display: flex; align-items: center; gap: 8px; }
+.scope :global(.client-detail-avatar) { width: 40px; height: 40px; font-size: 10px; }
+.scope :global(.client-identity > div) { min-width: 0; display: grid; gap: 5px; }
+.scope :global(.client-identity strong) { overflow: hidden; color: #eee; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.client-identity > div > span) { display: flex; align-items: center; gap: 4px; color: #c7c7c7; font-size: 8px; white-space: nowrap; }
+.scope :global(.client-identity > div > span svg) { color: #36c96e; }
+.scope :global(.status-pill) { min-height: 22px; display: inline-flex; align-items: center; align-self: flex-start; gap: 5px; margin: -2px 0 0 48px; padding: 0 8px; border: 1px solid rgba(255,101,0,.55); border-radius: 14px; background: rgba(255,101,0,.12); color: #ff9437; font-size: 8px; }
+.scope :global(.status-pill i) { width: 5px; height: 5px; background: var(--orange); }
+.scope :global(.status-pill svg) { transform: rotate(90deg); }
+.scope :global(.status-pill.status-done) { border-color: rgba(72,197,111,.4); background: rgba(72,197,111,.1); color: #7ed995; }
+.scope :global(.status-pill.status-done i) { background: #56cf79; }
+.scope :global(.client-fields) { display: grid; gap: 0; padding: 7px 0; border-top: 1px solid #2b2b2b; border-bottom: 1px solid #2b2b2b; }
+.scope :global(.client-field) { min-height: 27px; display: grid; grid-template-columns: 15px minmax(58px, .8fr) minmax(0, 1fr); align-items: center; gap: 5px; }
+.scope :global(.client-field > svg) { color: #bcbcbc; }
+.scope :global(.client-field > span) { color: #aaa; font-size: 8px; }
+.scope :global(.client-field > strong) { min-width: 0; display: inline-flex; align-items: center; gap: 4px; overflow: hidden; color: #e4e4e4; font-size: 8px; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.owner-chip) { width: 17px; height: 17px; display: inline-grid; place-items: center; flex: 0 0 auto; border-radius: 50%; background: #343434; color: #ddd; font-size: 6px; font-weight: 700; }
+.scope :global(.conversation-summary) { display: grid; gap: 7px; }
+.scope :global(.conversation-summary h3), .scope :global(.internal-note-form label) { display: flex; align-items: center; gap: 6px; margin: 0; color: #e4e4e4; font-size: 9px; font-weight: 600; }
+.scope :global(.conversation-summary h3 svg), .scope :global(.internal-note-form label svg) { color: #d1d1d1; flex: 0 0 auto; }
+.scope :global(.conversation-summary p) { margin: 0; color: #b5b5b5; font-size: 8px; line-height: 1.5; }
+.scope :global(.internal-note-form) { display: grid; gap: 6px; margin-top: 1px; }
+.scope :global(.internal-note-form small) { margin-top: -4px; color: #888; font-size: 7px; }
+.scope :global(.internal-note-form textarea) { width: 100%; min-height: 57px; resize: vertical; padding: 7px; border: 1px solid #303030; border-radius: 6px; outline: none; background: #191919; color: #dedede; font: inherit; font-size: 8px; line-height: 1.45; }
+.scope :global(.internal-note-form textarea:focus) { border-color: #555; }
+.scope :global(.internal-note-form .button-primary) { min-height: 27px; height: 27px; width: 100%; font-size: 9px; }
+
+@media (max-width: 1100px) and (min-width: 781px) {
+  .scope :global(.conversation-workspace) { grid-template-columns: minmax(200px, 235px) minmax(0, 1fr); }
+  .scope :global(.client-details-panel) { display: none; }
+  .scope :global(.conversations-heading h1) { font-size: 21px; }
+  .scope :global(.inbox-select) { min-width: 126px; }
+  .scope :global(.team-select) { min-width: 120px; }
+}
+
+@media (max-width: 780px) {
+  .scope :global(.conversations-main) { width: 100%; height: auto; min-height: calc(100dvh - 114px); overflow: visible; }
+  .scope :global(.conversations-page-content) { height: auto; min-height: calc(100dvh - 114px); gap: 10px; padding: 14px 13px 13px; }
+  .scope :global(.conversations-heading) { align-items: flex-start; flex-direction: column; gap: 11px; }
+  .scope :global(.conversations-heading h1) { font-size: 22px; }
+  .scope :global(.inbox-controls) { width: 100%; }
+  .scope :global(.inbox-select) { min-width: 0; flex: 1; height: 32px; }
+  .scope :global(.conversation-workspace) { min-height: 55vh; flex: 1; display: block; }
+  .scope :global(.conversation-list-panel) { height: 100%; min-height: 0; }
+  .scope :global(.conversation-workspace.show-list .chat-panel),
+  .scope :global(.conversation-workspace.show-list .client-details-panel) { display: none; }
+  .scope :global(.conversation-workspace.show-chat .conversation-list-panel),
+  .scope :global(.conversation-workspace.show-chat .client-details-panel) { display: none; }
+  .scope :global(.conversation-workspace.show-chat .chat-panel) { height: 100%; min-height: 0; }
+  .scope :global(.conversation-list-item) { min-height: 62px; padding: 8px; }
+  .scope :global(.conversation-avatar) { width: 39px; height: 39px; }
+  .scope :global(.conversation-item-top strong) { font-size: 11px; }
+  .scope :global(.conversation-preview) { font-size: 10px; }
+  .scope :global(.chat-header) { min-height: 56px; padding: 7px; }
+  .scope :global(.conversation-back-button) { width: 28px; height: 28px; display: grid; flex: 0 0 auto; }
+  .scope :global(.conversation-back-button svg) { transform: rotate(180deg); }
+  .scope :global(.chat-header-avatar) { width: 36px; height: 36px; }
+  .scope :global(.chat-header-person > strong) { font-size: 11px; }
+  .scope :global(.chat-header-person > span) { font-size: 8px; }
+  .scope :global(.take-chat-button) { max-width: 38px; width: 36px; padding: 0; justify-content: center; }
+  .scope :global(.take-chat-button span) { display: none; }
+  .scope :global(.chat-messages) { padding: 6px 9px 12px; }
+  .scope :global(.chat-bubble p) { font-size: 11px; }
+  .scope :global(.message-composer) { min-height: 46px; margin-bottom: 8px; }
+  .scope.chatView :global(.topbar) { display: none; }
+  .scope.chatView :global(.conversations-main) { height: calc(100dvh - 60px); min-height: 0; padding-bottom: 0; overflow: hidden; }
+  .scope.chatView :global(.conversations-page-content) { height: 100%; min-height: 0; padding: 0; }
+  .scope.chatView :global(.conversations-heading) { display: none; }
+  .scope.chatView :global(.conversation-workspace) { height: 100%; min-height: 0; }
+  .scope.chatView :global(.chat-panel) { border: 0; border-radius: 0; }
+}
+
+@media (max-width: 500px) {
+  .scope :global(.conversations-page-content) { padding-right: 10px; padding-left: 10px; }
+  .scope :global(.conversations-heading) { gap: 9px; }
+  .scope :global(.conversations-heading h1) { font-size: 21px; }
+  .scope :global(.inbox-select) { gap: 5px; padding: 0 6px; }
+  .scope :global(.inbox-select select) { font-size: 9px; }
+  .scope :global(.team-select) { min-width: 0; }
+  .scope :global(.inbox-tabs) { gap: 4px; padding-right: 6px; padding-left: 6px; }
+  .scope :global(.inbox-tabs button) { padding: 0 7px; font-size: 8px; }
+  .scope :global(.chat-more-button) { display: none; }
+  .scope :global(.chat-bubble) { max-width: 90%; }
+  .scope :global(.conversation-list-item) { min-height: 64px; }
+}

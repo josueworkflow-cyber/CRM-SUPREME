@@ -1,0 +1,14 @@
+/output/
+/tmp/
+/CONTEXTO_CRM.md
+/frontend/node_modules/
+/frontend/.next/
+/frontend/out/
+/frontend/coverage/
+/frontend/*.tsbuildinfo
+.env*
+!.env.example
+/frontend/.env*
+!/frontend/.env.example
+.DS_Store
+Thumbs.db

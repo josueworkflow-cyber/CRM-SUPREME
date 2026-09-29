@@ -1,0 +1,118 @@
+.scope { min-height: 100vh; }
+/*  Funil page styles  */
+.scope :global(.funnel-main) { width: calc(100% - 220px); height: 100vh; min-height: 0; overflow: hidden; }
+.scope :global(.funnel-page-content) { width: 100%; max-width: 1800px; height: 100%; display: flex; flex-direction: column; padding: 27px 18px 18px; }
+.scope :global(.funnel-heading) { flex: 0 0 auto; align-items: center; gap: 18px; margin-bottom: 17px; }
+.scope :global(.funnel-heading h1) { font-size: 26px; }
+.scope :global(.funnel-controls) { display: flex; align-items: center; gap: 9px; }
+.scope :global(.funnel-search), .scope :global(.owner-filter) { height: 40px; display: flex; align-items: center; gap: 9px; padding: 0 11px; border: 1px solid #303030; border-radius: 7px; background: #151515; color: #bcbcbc; }
+.scope :global(.funnel-search) { width: 174px; }
+.scope :global(.funnel-search svg), .scope :global(.owner-filter > svg:first-child) { flex: 0 0 auto; color: #b5b5b5; }
+.scope :global(.funnel-search input) { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: #fff; font-size: 11px; }
+.scope :global(.funnel-search input::placeholder) { color: #b4b4b4; opacity: 1; }
+.scope :global(.funnel-search:focus-within), .scope :global(.owner-filter:focus-within) { border-color: #565656; }
+.scope :global(.owner-filter) { width: 194px; }
+.scope :global(.owner-filter select) { min-width: 0; flex: 1; appearance: none; border: 0; outline: 0; background: transparent; color: #e5e5e5; font-size: 11px; cursor: pointer; }
+.scope :global(.owner-filter option), .scope :global(.dialog-field option), .scope :global(.customer-form option) { background: #1b1b1b; color: #fff; }
+.scope :global(.owner-filter > svg:last-child) { flex: 0 0 auto; color: #a3a3a3; }
+.scope :global(.funnel-controls .button-primary) { height: 40px; padding: 0 13px; white-space: nowrap; }
+.scope :global(.kanban-board) { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(5, minmax(170px, 1fr)); align-items: stretch; gap: 7px; overflow-x: auto; overflow-y: hidden; scrollbar-color: #474747 #151515; scrollbar-width: thin; }
+.scope :global(.kanban-column) { --stage-accent: #ff6500; min-width: 0; min-height: 0; height: 100%; display: flex; flex-direction: column; overflow: hidden; border: 1px solid #2b2b2b; border-top: 3px solid var(--stage-accent); border-radius: 7px; background: linear-gradient(180deg, #151515 0%, #111 100%); transition: border-color .15s ease, background .15s ease; }
+.scope :global(.stage-new) { --stage-accent: #ff6500; }
+.scope :global(.stage-in-progress) { --stage-accent: #f04436; }
+.scope :global(.stage-negotiation) { --stage-accent: #ffb000; }
+.scope :global(.stage-closed) { --stage-accent: #ff6500; }
+.scope :global(.stage-lost) { --stage-accent: #8b8b8b; }
+.scope :global(.kanban-column.is-drop-target) { border-color: var(--stage-accent); background: #191919; }
+.scope :global(.kanban-column-heading) { min-height: 46px; display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 0 8px 0 10px; border-bottom: 1px solid #262626; }
+.scope :global(.kanban-stage-title) { min-width: 0; display: flex; align-items: center; gap: 8px; }
+.scope :global(.kanban-dot) { width: 12px; height: 12px; flex: 0 0 auto; border-radius: 50%; background: var(--stage-accent); }
+.scope :global(.kanban-stage-title h2) { overflow: hidden; margin: 0; color: #f2f2f2; font-size: 12px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.kanban-count) { min-width: 23px; height: 23px; display: inline-flex; align-items: center; justify-content: center; padding: 0 5px; border-radius: 20px; background: #303030; color: #ededed; font-size: 10px; font-weight: 700; }
+.scope :global(.kanban-column-heading .row-action) { flex: 0 0 auto; }
+.scope :global(.kanban-cards) { min-height: 0; flex: 1; display: flex; flex-direction: column; gap: 7px; overflow-y: auto; padding: 7px; scrollbar-color: #414141 #141414; scrollbar-width: thin; }
+.scope :global(.opportunity-card) { display: flex; flex-direction: column; gap: 7px; padding: 9px 8px 8px; border: 1px solid #303030; border-radius: 7px; outline: none; background: #1b1b1b; color: #fff; cursor: grab; transition: border-color .15s ease, transform .15s ease, opacity .15s ease; }
+.scope :global(.opportunity-card:hover), .scope :global(.opportunity-card:focus-visible) { border-color: #555; transform: translateY(-1px); }
+.scope :global(.opportunity-card:active) { cursor: grabbing; }
+.scope :global(.opportunity-card.is-dragging) { opacity: .45; }
+.scope :global(.opportunity-main) { min-width: 0; display: flex; align-items: center; gap: 7px; }
+.scope :global(.opportunity-main .avatar) { width: 39px; height: 39px; font-size: 10px; }
+.scope :global(.opportunity-customer) { min-width: 0; display: flex; flex: 1; flex-direction: column; gap: 4px; }
+.scope :global(.opportunity-customer strong) { overflow: hidden; color: #f1f1f1; font-size: 10px; font-weight: 700; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.opportunity-customer span) { overflow: hidden; color: #a9a9a9; font-size: 10px; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.owner-initials) { width: 25px; height: 25px; display: grid; place-items: center; flex: 0 0 auto; border: 1px solid #3b3b3b; border-radius: 50%; background: #303030; color: #e6e6e6; font-size: 8px; font-weight: 700; }
+.scope :global(.opportunity-price) { align-self: flex-end; margin-top: -2px; color: #f5f5f5; font-size: 13px; font-weight: 600; letter-spacing: -.015em; }
+.scope :global(.opportunity-signal) { min-width: 0; display: flex; align-items: center; gap: 6px; color: #bdbdbd; font-size: 9px; line-height: 1.35; }
+.scope :global(.opportunity-signal svg) { flex: 0 0 auto; color: #d5d5d5; }
+.scope :global(.opportunity-signal > span) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.scope :global(.opportunity-signal strong) { flex: 0 0 auto; color: var(--orange); font-size: 9px; }
+.scope :global(.signal-checkCircle svg) { color: #42cf68; fill: #42cf68; stroke: #101010; }
+.scope :global(.signal-xCircle svg) { color: #fa4141; }
+.scope :global(.opportunity-signal-stack) { display: grid; gap: 5px; }
+.scope :global(.ai-attention) { width: fit-content; display: inline-flex; align-items: center; gap: 5px; padding: 4px 7px; border: 1px solid rgba(255, 101, 0, .45); border-radius: 20px; background: rgba(255, 101, 0, .13); color: #ff8a36; font-size: 9px; font-weight: 600; }
+.scope :global(.ai-attention svg) { color: var(--orange); }
+.scope :global(.add-opportunity-inline) { min-height: 43px; display: flex; align-items: center; justify-content: center; gap: 7px; margin-top: 1px; border: 1px dashed #303030; border-radius: 6px; background: rgba(20,20,20,.6); color: var(--orange); font-size: 11px; cursor: pointer; transition: border-color .15s ease, background .15s ease; }
+.scope :global(.add-opportunity-inline:hover) { border-color: var(--orange); background: rgba(255,101,0,.06); }
+.scope :global(.empty-column) { margin: 5px 2px 0; color: #8b8b8b; font-size: 10px; line-height: 1.5; }
+.scope :global(.mobile-stage-tabs), .scope :global(.mobile-kanban-board) { display: none; }
+.scope :global(.opportunity-dialog-person) { display: flex; align-items: center; gap: 10px; }
+.scope :global(.opportunity-dialog-person .avatar) { width: 38px; height: 38px; font-size: 10px; }
+.scope :global(.opportunity-dialog-person h2) { margin: 2px 0 0; font-size: 16px; }
+.scope :global(.opportunity-dialog-plan) { display: flex; justify-content: space-between; gap: 12px; margin: 17px 0; padding: 12px; border: 1px solid #333; border-radius: 7px; background: #151515; color: #aaa; font-size: 11px; }
+.scope :global(.opportunity-dialog-plan strong) { color: #fff; font-size: 13px; }
+.scope :global(.dialog-field) { display: grid; gap: 6px; margin-top: 11px; color: #d7d7d7; font-size: 11px; font-weight: 600; }
+.scope :global(.dialog-field select), .scope :global(.customer-form select) { width: 100%; height: 38px; padding: 0 10px; border: 1px solid #3a3a3a; border-radius: 6px; outline: none; background: #111; color: #fff; font-size: 12px; }
+.scope :global(.dialog-field select:focus), .scope :global(.customer-form select:focus) { border-color: var(--orange); box-shadow: 0 0 0 2px rgba(255,101,0,.14); }
+.scope :global(.form-row) { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.scope :global(.funnel-controls .funnel-search input) { height: 100%; }
+
+@media (max-width: 1200px) {
+  .scope :global(.funnel-main) { width: calc(100% - 180px); }
+  .scope :global(.funnel-page-content) { padding-right: 12px; padding-left: 12px; }
+}
+
+@media (max-width: 980px) {
+  .scope :global(.funnel-main) { width: calc(100% - 136px); }
+  .scope :global(.funnel-heading) { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .scope :global(.funnel-controls) { width: 100%; }
+  .scope :global(.funnel-search) { flex: 1; }
+  .scope :global(.owner-filter) { width: 190px; }
+}
+
+@media (max-width: 780px) {
+  .scope :global(.funnel-main) { width: 100%; height: auto; min-height: 100vh; overflow: visible; }
+  .scope :global(.funnel-page-content) { height: auto; min-height: calc(100vh - 114px); padding: 18px 16px 15px; }
+  .scope :global(.funnel-heading) { gap: 14px; margin-bottom: 15px; }
+  .scope :global(.funnel-heading h1) { font-size: 24px; }
+  .scope :global(.funnel-controls) { display: grid; grid-template-columns: minmax(0, 1fr) 42px; gap: 8px; }
+  .scope :global(.funnel-search) { width: auto; height: 40px; }
+  .scope :global(.owner-filter) { display: none; }
+  .scope :global(.funnel-controls .button-primary) { width: 42px; height: 40px; padding: 0; }
+  .scope :global(.new-opportunity-button span) { display: none; }
+  .scope :global(.mobile-stage-tabs) { display: flex; gap: 7px; overflow-x: auto; padding: 0 0 7px; scrollbar-width: none; }
+  .scope :global(.mobile-stage-tabs::-webkit-scrollbar) { display: none; }
+  .scope :global(.mobile-stage-tabs button) { min-height: 34px; display: inline-flex; align-items: center; gap: 7px; flex: 0 0 auto; padding: 0 9px; border: 1px solid #303030; border-radius: 20px; background: #171717; color: #d4d4d4; font-size: 10px; white-space: nowrap; }
+  .scope :global(.mobile-stage-tabs button.selected) { border-color: var(--orange); background: rgba(255,101,0,.12); color: #fff; }
+  .scope :global(.mobile-stage-tabs .kanban-count) { min-width: 19px; height: 19px; background: #333; font-size: 9px; }
+  .scope :global(.mobile-stage-tabs button.selected .kanban-count) { background: var(--orange); color: #fff; }
+  .scope :global(.kanban-board) { display: none; }
+  .scope :global(.mobile-kanban-board) { display: block; margin-top: 2px; }
+  .scope :global(.mobile-kanban-board .kanban-column) { min-height: calc(100vh - 265px); height: auto; }
+  .scope :global(.mobile-kanban-board .kanban-column-heading) { min-height: 45px; }
+  .scope :global(.mobile-kanban-board .kanban-stage-title h2) { font-size: 12px; }
+  .scope :global(.mobile-kanban-board .kanban-cards) { overflow: visible; padding: 8px; }
+  .scope :global(.mobile-kanban-board .opportunity-card) { padding: 10px; }
+  .scope :global(.mobile-kanban-board .opportunity-main .avatar) { width: 42px; height: 42px; font-size: 11px; }
+  .scope :global(.mobile-kanban-board .opportunity-customer strong) { font-size: 11px; }
+  .scope :global(.mobile-kanban-board .opportunity-customer span) { font-size: 10px; }
+  .scope :global(.mobile-kanban-board .opportunity-price) { font-size: 14px; }
+  .scope :global(.mobile-kanban-board .opportunity-signal) { font-size: 10px; }
+  .scope :global(.mobile-kanban-board .add-opportunity-inline) { min-height: 42px; }
+  .scope :global(.form-row) { grid-template-columns: 1fr; gap: 13px; }
+}
+
+@media (max-width: 500px) {
+  .scope :global(.funnel-page-content) { padding-right: 11px; padding-left: 11px; }
+  .scope :global(.funnel-heading h1) { font-size: 23px; }
+  .scope :global(.opportunity-dialog-plan) { font-size: 10px; }
+}

@@ -1,0 +1,147 @@
+.scope {
+  min-height: 100dvh;
+}
+/*  Login page styles  */
+.scope {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  overflow: hidden;
+  background: #0d0e0f;
+}
+.scope :global(.login-brand-panel) {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: clamp(26px, 4.2vw, 66px);
+  border-right: 1px solid #262626;
+  background: linear-gradient(145deg, #0d0d0d 0%, #101010 72%, #12100e 100%);
+}
+.scope :global(.login-brand-glow) {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 82% 62%, rgba(255, 83, 0, .09), transparent 47%);
+}
+.scope :global(.login-brand-top) { position: relative; z-index: 1; }
+.scope :global(.login-logo) { display: block; width: min(190px, 100%); height: auto; object-fit: contain; object-position: left center; }
+.scope :global(.login-watermark) {
+  position: absolute;
+  top: 48%;
+  right: clamp(-76px, 2vw, 32px);
+  width: clamp(240px, 35vw, 430px);
+  height: auto;
+  opacity: .11;
+  object-fit: contain;
+  transform: translateY(-44%);
+}
+.scope :global(.login-pitch) { position: relative; z-index: 1; margin: auto 0; padding: 36px 0; }
+.scope :global(.login-pitch h1) { margin: 0; color: #f5f5f5; font-size: clamp(27px, 3vw, 44px); font-weight: 700; line-height: 1.13; letter-spacing: -.045em; }
+.scope :global(.login-accent-line) { display: block; width: 48px; height: 3px; margin: 19px 0 14px; border-radius: 4px; background: var(--orange); }
+.scope :global(.login-pitch p) { margin: 0; color: #b8b8b8; font-size: clamp(13px, 1.2vw, 16px); line-height: 1.55; }
+.scope :global(.login-credit) { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 1.8px; margin-top: auto; color: #999; font-size: 9px; line-height: 1.2; }
+.scope :global(.login-credit-logo) { display: block; width: 94px; height: auto; object-fit: contain; opacity: .9; }
+.scope :global(.login-main) {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: clamp(20px, 4vw, 64px);
+  background: radial-gradient(ellipse at 50% 45%, #171819 0, #101112 55%, #0d0e0f 100%);
+}
+.scope :global(.login-card) {
+  width: min(100%, 432px);
+  padding: clamp(25px, 3.4vw, 43px);
+  border: 1px solid #292b2d;
+  border-radius: 12px;
+  background: linear-gradient(145deg, rgba(21, 23, 24, .97), rgba(17, 18, 19, .97));
+  box-shadow: 0 22px 70px rgba(0, 0, 0, .24), inset 0 1px rgba(255, 255, 255, .018);
+}
+.scope :global(.login-mobile-brand) { display: none; }
+.scope :global(.login-heading) { margin-bottom: 25px; text-align: center; }
+.scope :global(.login-heading h2) { margin: 0; color: #f6f6f6; font-size: 21px; font-weight: 700; letter-spacing: -.025em; }
+.scope :global(.login-heading p) { margin: 7px 0 0; color: #a7abb0; font-size: 12px; }
+.scope :global(.login-form) { display: grid; gap: 9px; }
+.scope :global(.login-label) { margin: 1px 0 -3px; color: #e7e7e7; font-size: 11px; font-weight: 500; }
+.scope :global(.login-input-wrap) {
+  height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 11px;
+  border: 1px solid #363a3d;
+  border-radius: 6px;
+  background: #111315;
+  color: #aeb4b9;
+  transition: border-color .16s ease, box-shadow .16s ease;
+}
+.scope :global(.login-input-wrap:focus-within) { border-color: #777d82; box-shadow: 0 0 0 3px rgba(255, 255, 255, .035); }
+.scope :global(.login-input-wrap > svg) { flex: 0 0 auto; }
+.scope :global(.login-input-wrap input) { width: 100%; min-width: 0; height: 100%; padding: 0; border: 0; outline: 0; background: transparent; color: #f5f5f5; font-size: 12px; }
+.scope :global(.login-input-wrap input:-webkit-autofill),
+.scope :global(.login-input-wrap input:-webkit-autofill:hover),
+.scope :global(.login-input-wrap input:-webkit-autofill:focus),
+.scope :global(.login-input-wrap input:autofill) {
+  -webkit-text-fill-color: #f5f5f5;
+  caret-color: #f5f5f5;
+  -webkit-box-shadow: 0 0 0 1000px #111315 inset;
+  box-shadow: 0 0 0 1000px #111315 inset;
+  transition: background-color 9999s ease-out 0s;
+}
+.scope :global(.login-input-wrap input::placeholder) { color: #788087; opacity: 1; }
+.scope :global(.password-visibility) { width: 26px; height: 30px; display: grid; place-items: center; flex: 0 0 auto; padding: 0; border: 0; border-radius: 4px; background: transparent; color: #aeb4b9; cursor: pointer; }
+.scope :global(.password-visibility:hover) { color: #fff; background: #202224; }
+.scope :global(.login-options) { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 1px 0 7px; }
+.scope :global(.remember-option) { position: relative; display: inline-flex; align-items: center; gap: 8px; color: #dedede; font-size: 10px; cursor: pointer; user-select: none; }
+.scope :global(.remember-option input) { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; clip-path: inset(50%); }
+.scope :global(.custom-checkbox) { width: 15px; height: 15px; display: grid; place-items: center; border: 1px solid #73777a; border-radius: 3px; color: transparent; transition: border-color .16s ease, background .16s ease; }
+.scope :global(.remember-option input:checked + .custom-checkbox) { border-color: var(--orange); background: var(--orange); color: #fff; }
+.scope :global(.remember-option input:focus-visible + .custom-checkbox) { outline: 2px solid #fff; outline-offset: 2px; }
+.scope :global(.forgot-link) { padding: 3px 0; border: 0; background: transparent; color: #ff750f; font-size: 10px; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; }
+.scope :global(.forgot-link:hover) { color: #ffa15c; }
+.scope :global(.login-submit) {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 1px;
+  border: 1px solid var(--orange);
+  border-radius: 6px;
+  background: linear-gradient(100deg, #ff6900, #ff5200);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(255, 84, 0, .13);
+  transition: filter .16s ease, transform .16s ease;
+}
+.scope :global(.login-submit:hover) { filter: brightness(1.08); transform: translateY(-1px); }
+.scope :global(.login-submit:disabled) { cursor: wait; filter: saturate(.75); transform: none; }
+.scope :global(.login-button-spinner) { width: 14px; height: 14px; border: 2px solid rgba(255,255,255,.45); border-top-color: #fff; border-radius: 50%; animation: login-spin .65s linear infinite; }
+.scope :global(.login-feedback) { margin: 0; color: #ffad72; font-size: 10px; line-height: 1.45; }
+.scope :global(.login-access-note) { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 17px; color: #888e93; font-size: 9px; text-align: center; }
+.scope :global(.login-access-note svg) { flex: 0 0 auto; }
+@media (max-width: 560px) {
+  .scope { grid-template-columns: minmax(0, 1fr); overflow: visible; }
+  .scope :global(.login-brand-panel) { min-height: auto; padding: 22px clamp(20px, 6vw, 30px) 0; border: 0; background: #0d0e0f; }
+  .scope :global(.login-logo) { width: min(172px, 100%); }
+  .scope :global(.login-watermark), .scope :global(.login-pitch), .scope :global(.login-credit) { display: none; }
+  .scope :global(.login-main) { min-height: auto; padding: 28px 18px 38px; background: #0d0e0f; }
+  .scope :global(.login-card) { width: min(100%, 440px); padding: 0; border: 0; background: transparent; box-shadow: none; }
+  .scope :global(.login-mobile-brand) { display: none; }
+  .scope :global(.login-heading) { margin-bottom: 25px; }
+  .scope :global(.login-heading h2) { font-size: 22px; }
+  .scope :global(.login-input-wrap) { height: 46px; }
+  .scope :global(.login-submit) { min-height: 46px; }
+}
+@media (max-width: 360px) {
+  .scope :global(.login-main) { padding-right: 14px; padding-left: 14px; }
+  .scope :global(.login-options) { align-items: flex-start; }
+  .scope :global(.remember-option), .scope :global(.forgot-link) { font-size: 9px; }
+}
+@keyframes login-spin { to { transform: rotate(360deg); } }

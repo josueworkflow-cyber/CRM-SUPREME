@@ -1,0 +1,11 @@
+.git
+output
+tmp
+CONTEXTO_CRM.md
+**/node_modules
+**/.next
+**/out
+**/coverage
+**/*.tsbuildinfo
+**/.env*
+!**/.env.example
